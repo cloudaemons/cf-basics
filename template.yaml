@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >
+  This is boilerplate template which creates single S3 bucket
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Project name, part of the name of all created components
+
+
+Resources:
+  MyBucket: ## https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+Outputs:
+  BucketName:
+    Value: !Ref MyBucket
+    Description: Bucket name
